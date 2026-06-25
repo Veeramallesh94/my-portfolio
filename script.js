@@ -127,28 +127,108 @@ const skillObserver = new IntersectionObserver((entries) => {
 skillFills.forEach(el => skillObserver.observe(el));
 
 
-/* ---------- CONTACT FORM (local demo) ---------- */
-const contactForm = document.getElementById("contactForm");
-const formNote = document.getElementById("formNote");
+/* ============================================================
+   EMAILJS CONFIGURATION
+   ─────────────────────────────────────────────────────────────
+   Step 1 → Go to https://www.emailjs.com and sign up (free).
+   Step 2 → Add an Email Service (Gmail, Outlook, etc.)
+            and copy the Service ID  →  replace YOUR_SERVICE_ID
+   Step 3 → Create an Email Template and copy the Template ID
+            →  replace YOUR_TEMPLATE_ID
+            Template variables to map in your EmailJS dashboard:
+              {{from_name}}   ← sender's name
+              {{from_email}}  ← sender's email
+              {{message}}     ← message body
+   Step 4 → Go to Account → copy your Public Key
+            →  replace YOUR_PUBLIC_KEY
+   ============================================================ */
 
-contactForm.addEventListener("submit", (e) => {
+const EMAILJS_PUBLIC_KEY   = "YOUR_PUBLIC_KEY";   // ← replace this
+const EMAILJS_SERVICE_ID   = "service_27bbx9i";   // ← replace this
+const EMAILJS_TEMPLATE_ID  = "YOUR_TEMPLATE_ID";  // ← replace this
+
+// Initialise EmailJS with your public key
+(function () {
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+})();
+
+/* ---------- CONTACT FORM — EmailJS ---------- */
+const contactForm = document.getElementById("contactForm");
+const formNote    = document.getElementById("formNote");
+const submitBtn   = contactForm.querySelector("button[type='submit']");
+
+// Utility: show a message in the note paragraph
+function showNote(text, isError) {
+  formNote.textContent = text;
+  formNote.style.color = isError ? "#ff7b72" : "var(--teal)";
+}
+
+// Utility: basic email format check
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+contactForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
+  // ── 1. Gather values ──────────────────────────────────────
+  const name    = document.getElementById("name").value.trim();
+  const email   = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  if (!name || !email || !message) {
-    formNote.textContent = "Please fill all fields.";
-    formNote.style.color = "#ff7b72";
+  // ── 2. Validate ───────────────────────────────────────────
+  if (!name) {
+    showNote("Please enter your name.", true);
+    document.getElementById("name").focus();
+    return;
+  }
+  if (!email) {
+    showNote("Please enter your email address.", true);
+    document.getElementById("email").focus();
+    return;
+  }
+  if (!isValidEmail(email)) {
+    showNote("Please enter a valid email address.", true);
+    document.getElementById("email").focus();
+    return;
+  }
+  if (!message) {
+    showNote("Please enter a message.", true);
+    document.getElementById("message").focus();
     return;
   }
 
-  // Simulate form submission (replace with your backend / EmailJS / Formspree)
-  formNote.textContent = "✓ Thanks " + name + "! I'll get back to you soon.";
-  formNote.style.color = "var(--teal)";
-  contactForm.reset();
-  setTimeout(() => formNote.textContent = "", 5000);
+  // ── 3. Loading state ──────────────────────────────────────
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...';
+  showNote("", false);
+  console.log("[EmailJS] Request started — sending message from:", email);
+
+  // ── 4. Send via EmailJS ───────────────────────────────────
+  const templateParams = {
+    from_name:  name,
+    from_email: email,
+    message:    message
+  };
+
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+    .then(function (response) {
+      // ── 5a. Success ───────────────────────────────────────
+      console.log("[EmailJS] Email sent successfully:", response.status, response.text);
+      showNote("✓ Message sent successfully!", false);
+      contactForm.reset();
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fa fa-paper-plane"></i> Send Message';
+      // Clear success note after 6 seconds
+      setTimeout(() => { formNote.textContent = ""; }, 6000);
+    })
+    .catch(function (error) {
+      // ── 5b. Failure ───────────────────────────────────────
+      console.error("[EmailJS] Email failed:", error);
+      showNote("Failed to send message. Please try again later.", true);
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fa fa-paper-plane"></i> Send Message';
+    });
 });
 
 

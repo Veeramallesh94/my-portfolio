@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>S. Veera Mallesh | AIML Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">VM<span class="dot">.</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-tag"><span class="tag-dot"></span>Open to internships</div>
+      <h1 class="hero-name">S. Veera<br/><span class="accent">Mallesh</span></h1>
+      <p class="hero-role">
+        <span class="typed-text" id="typedText"></span><span class="cursor">|</span>
+      </p>
+      <p class="hero-sub">
+        B.Tech AIML Student at KIET, Kakinada — building intelligent systems,
+        one model at a time.
+      </p>
+      <div class="hero-cta">
+        <a href="veera_resume.pdf" download class="btn btn-primary">
+          <i class="fa fa-download"></i> Download Resume
+        </a>
+        <a href="https://www.linkedin.com/in/veeramalleshsunkara" target="_blank" class="btn btn-outline">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/Veeramallesh94" target="_blank" class="btn btn-outline">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-card">
+        <div class="code-header">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="code-file">veera.py</span>
+        </div>
+        <pre class="code-body"><span class="kw">class</span> <span class="cls">VeeraMallesh</span>:
+  role  = <span class="str">"AIML Student"</span>
+  stack = [<span class="str">"Python"</span>, <span class="str">"ML"</span>,
+           <span class="str">"Flask"</span>, <span class="str">"SQL"</span>]
+  goal  = <span class="str">"AI in Healthcare"</span>
+
+  <span class="kw">def</span> <span class="fn">build</span>(self):
+    <span class="kw">return</span> <span class="str">"real-world impact"</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Who I Am</span>
+        <h2>About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-avatar">
+          <div class="avatar-ring">
+            <div class="avatar-inner">
+              <i class="fa fa-user-astronaut fa-3x"></i>
+            </div>
+          </div>
+          <div class="avatar-badges">
+            <span class="badge">AIML</span>
+            <span class="badge">Python</span>
+            <span class="badge">Data</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>
+            I'm a <strong>B.Tech AIML student</strong> at Kakinada Institute of Engineering and Technology (KIET),
+            graduating in 2027. I'm passionate about applying machine learning and data analysis to solve
+            real-world problems — especially in <strong>healthcare and clinical data science</strong>.
+          </p>
+          <p>
+            My journey started with Python scripting and grew into building end-to-end ML pipelines,
+            deploying Flask web apps, and analysing datasets using SQL and Excel. I've completed
+            virtual internships with <strong>AICTE & EduSkills</strong> and hold certifications in
+            Full Stack Development, Android Development, and Solutions Architecture.
+          </p>
+          <p>
+            Currently levelling up in <strong>SQL, regression models</strong>, and
+            <strong>Real World Evidence (RWE)</strong> methods, with a long-term goal of working
+            at the intersection of AI and clinical research.
+          </p>
+          <div class="about-stats">
+            <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Projects</span></div>
+            <div class="stat"><span class="stat-num">2</span><span class="stat-label">Internships</span></div>
+            <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Certifications</span></div>
+            <div class="stat"><span class="stat-num">7.2</span><span class="stat-label">CGPA</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What I Know</span>
+        <h2>Skills</h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-python"></i></div>
+          <h3>Python</h3>
+          <p>Data manipulation, scripting, ML model building with Scikit-learn and Pandas.</p>
+          <div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa fa-brain"></i></div>
+          <h3>Machine Learning</h3>
+          <p>Classification, regression, feature engineering, model evaluation metrics.</p>
+          <div class="skill-bar"><div class="skill-fill" data-pct="70"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa fa-database"></i></div>
+          <h3>SQL</h3>
+          <p>Complex queries, data extraction, aggregation and cohort filtering.</p>
+          <div class="skill-bar"><div class="skill-fill" data-pct="65"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa fa-flask"></i></div>
+          <h3>Flask</h3>
+          <p>REST API development, ML model deployment, end-to-end web pipelines.</p>
+          <div class="skill-bar"><div class="skill-fill" data-pct="72"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-html5"></i></div>
+          <h3>HTML5 / CSS3</h3>
+          <p>Responsive frontend design, semantic markup, clean layouts.</p>
+          <div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-js"></i></div>
+          <h3>JavaScript</h3>
+          <p>DOM manipulation, interactive UI, event-driven logic.</p>
+          <div class="skill-bar"><div class="skill-fill" data-pct="60"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa fa-file-excel"></i></div>
+          <h3>Excel</h3>
+          <p>Data cleaning, pivot tables, formula-based analysis, reporting.</p>
+          <div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa fa-chart-bar"></i></div>
+          <h3>Data Analysis</h3>
+          <p>EDA, visualisation, insight generation from raw datasets.</p>
+          <div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What I've Built</span>
+        <h2>Projects</h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-number">01</div>
+          <div class="project-icon"><i class="fa fa-newspaper"></i></div>
+          <h3>AI News Article Summarizer</h3>
+          <p>
+            An NLP-powered tool that fetches news articles and generates concise, readable summaries
+            using transformer-based text summarization models.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>NLP</span><span>Transformers</span><span>Flask</span>
+          </div>
+          <a href="https://github.com/Veeramallesh94" target="_blank" class="project-link">
+            View on GitHub <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-number">02</div>
+          <div class="project-icon"><i class="fa fa-people-group"></i></div>
+          <h3>Visual Crowd Density & Flow Analysis</h3>
+          <p>
+            A computer vision system that analyses video or image feeds to detect crowd density and
+            movement patterns — applicable for public safety and event management.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>OpenCV</span><span>Computer Vision</span><span>Deep Learning</span>
+          </div>
+          <a href="https://github.com/Veeramallesh94" target="_blank" class="project-link">
+            View on GitHub <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="project-card featured">
+          <div class="project-number">03</div>
+          <div class="project-icon"><i class="fa fa-user-tie"></i></div>
+          <h3>Employee Promotion Prediction</h3>
+          <p>
+            ML classification model built on a Kaggle HR dataset. Includes data cleaning,
+            feature selection, cohort analysis, and sensitivity/specificity evaluation.
+            Deployed with Flask as a reproducible end-to-end pipeline.
+          </p>
+          <div class="project-tags">
+            <span>Python</span><span>Scikit-learn</span><span>Flask</span><span>HTML/CSS</span>
+          </div>
+          <a href="https://github.com/Veeramallesh94" target="_blank" class="project-link">
+            View on GitHub <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-number">04</div>
+          <div class="project-icon"><i class="fa fa-cart-shopping"></i></div>
+          <h3>E-Commerce Website</h3>
+          <p>
+            A fully responsive e-commerce frontend with clean layout, logical information hierarchy,
+            and product listing pages — built with pure HTML5 and CSS3.
+          </p>
+          <div class="project-tags">
+            <span>HTML5</span><span>CSS3</span><span>Responsive</span>
+          </div>
+          <a href="https://github.com/Veeramallesh94" target="_blank" class="project-link">
+            View on GitHub <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Get in Touch</span>
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-intro">
+            I'm actively looking for internships and collaborative projects in AI, ML, and Data Analysis.
+            Feel free to reach out!
+          </p>
+          <div class="contact-items">
+            <a href="mailto:veeramallesh48@gmail.com" class="contact-item">
+              <div class="contact-icon"><i class="fa fa-envelope"></i></div>
+              <div>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">veeramallesh48@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:9392734967" class="contact-item">
+              <div class="contact-icon"><i class="fa fa-phone"></i></div>
+              <div>
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">+91 9392734967</span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa fa-location-dot"></i></div>
+              <div>
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Konaseema, Andhra Pradesh</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/veeramalleshsunkara" target="_blank" class="social-btn">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/Veeramallesh94" target="_blank" class="social-btn">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fa fa-paper-plane"></i> Send Message
+          </button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>Designed & built by <strong>S. Veera Mallesh</strong> · 2025</p>
+      <p class="footer-sub">B.Tech AIML · KIET, Kakinada</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
